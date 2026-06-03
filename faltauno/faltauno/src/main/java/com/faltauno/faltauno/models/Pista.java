@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "pistas")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Pista {
 
     // Si quieres usar el estado como Enum en Java para mayor seguridad
