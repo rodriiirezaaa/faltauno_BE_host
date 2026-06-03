@@ -44,7 +44,7 @@ public class Alerta {
     @JoinColumn(name = "id_pista", nullable = false)
     private Pista pista;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
 
