@@ -1,6 +1,7 @@
 package com.faltauno.faltauno.models; // Ojo a la "s" final si la usas
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "pistas")
