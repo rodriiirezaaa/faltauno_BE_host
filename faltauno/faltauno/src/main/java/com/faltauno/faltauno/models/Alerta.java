@@ -40,7 +40,7 @@ public class Alerta {
 
     // --- CORRECCIÓN DE LA RELACIÓN CON LA PISTA ---
     // En tu SQL la clave obligatoria es id_pista, no id_cancha
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_pista", nullable = false)
     private Pista pista;
 
