@@ -141,4 +141,16 @@ public class UsuarioController {
 
         return ResponseEntity.badRequest().body("Error: No se encontraron los usuarios");
     }
+    // ENDPOINT TEMPORAL - BORRAR DESPUÉS
+@GetMapping("/reset-admin")
+public ResponseEntity<?> resetAdmin() {
+    Optional<Usuario> admin = usuarioService.buscarPorEmail("administracion@faltauno.com");
+    if (admin.isPresent()) {
+        Usuario u = admin.get();
+        u.setPasswd("admin123");
+        usuarioService.guardarUsuario(u);
+        return ResponseEntity.ok("Admin reseteado correctamente");
+    }
+    return ResponseEntity.badRequest().body("No encontrado");
+}
 }
