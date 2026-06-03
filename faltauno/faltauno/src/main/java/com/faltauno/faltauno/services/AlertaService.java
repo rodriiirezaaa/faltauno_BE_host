@@ -15,11 +15,13 @@ public class AlertaService {
     private AlertaRepository alertaRepository;
 
     // Obtener solo las alertas activas para el "Feed" principal
+    @Transactional
     public List<Alerta> obtenerAlertasActivas() {
         return alertaRepository.findByEstado(Alerta.Estado.ACTIVA);
     }
 
     // Crear una nueva alerta (Lanzar un "Falta Uno")
+    @Transactional
     public Alerta guardarAlerta(Alerta alerta) {
         // Al crearla, siempre empieza como ACTIVA y guardamos la hora exacta
         alerta.setEstado(Alerta.Estado.ACTIVA);
